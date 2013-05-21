@@ -1,0 +1,8 @@
+# Compiled source #
+###################
+*.esproj
+
+
+# Files #
+###################
+git-credential-osxkeychain
