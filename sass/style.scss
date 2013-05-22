@@ -1,24 +1,96 @@
 /* style.scss */
-$link-color: blueviolet;
+
 $navbar-width: 100%;
-$items: 3;
+$horz: "right";
+
+/* COLORS ================================== */
+
 $navbar-color-main: #59595B;
+$link-color: blueviolet;
+$gray-light-A2: #A2A2A2;
+$gray-light-D0: #D0D1D3;
+$gray-light-80: #808183;
+$gray-med-6D: #6D6E70;
+$gray-med-92: #929496;
+
+
+/* MIXINS ================================== */
+@mixin borders ($horz, $border-color) {
+	border-#{$horz}: 1px solid #{$border-color};
+}
 
 #navbar {	
 	background-color: $navbar-color-main;
-	height: 50px;
+	height: 127px;
 	width: $navbar-width;
+	
+	/* 	embedded styles */
+	ul { 
+		list-style-type: none; 
+		margin: 0;
+	}
+	
+	ul li { 
+		display: inline; 
+		float: left;     
+		font-weight: 300;
+	}
+	
+	ul li a { 	
+		color: $gray-light-D0; 
+		&:hover { color: #FFF; }		
+	}
+	
+	ul li.active a {
+		color: #FFF;
+	}
+}
 
-	ul { list-style-type: none; }
-		ul li { 
-				display: inline; 
-				float: left;     
-				padding: 15px;
-				width: $navbar-width/$items - 10%; 
+#main-nav {
+	box-sizing: border-box;
+	height: 81px;
+
+	/* 	embedded styles */		
+	ul li {
+		@include borders(right, $gray-light-80);
+		padding: 30px 25px 26px 25px;
+		
+		&:first-child { @include borders(left, $gray-light-80); }
+		&:hover { 
+			background-color: $gray-med-6D; 
+			@include borders(right, $gray-light-D0);
 		}
-			ul li a { 	color: $link-color; 
-						&:hover { color: green; }
-			}
-			
-	h1 { margin-top: 0; }
+	}
+	
+	ul li.active {
+		background-color: $gray-med-6D;
+	}
+	
+ 	
+}
+
+#sub-nav {
+	background-color: $gray-med-6D;
+	height:  46px;
+
+	ul li {
+		@include borders(right, $gray-light-80);
+		padding: 12px 25px 8px 25px;
+		
+		&:first-child { @include borders(left, $gray-light-80); }
+		&:hover { 
+			background-color: $gray-med-6D; 
+			@include borders(right, $gray-light-D0);
+		}
+	}
+	
+	ul li.active {
+		background-color: $gray-med-92;
+	}
+	
+}
+
+#logo {
+	background-color: $gray-light-A2;
+	padding: 20px 0 20px 32.5px;
 }

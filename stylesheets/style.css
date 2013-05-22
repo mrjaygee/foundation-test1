@@ -1,30 +1,88 @@
 /* style.scss */
-/* line 7, ../sass/style.scss */
+/* COLORS ================================== */
+/* MIXINS ================================== */
+/* line 22, ../sass/style.scss */
 #navbar {
   background-color: #59595b;
-  height: 50px;
+  height: 127px;
   width: 100%;
+  /* 	embedded styles */
 }
-/* line 12, ../sass/style.scss */
+/* line 28, ../sass/style.scss */
 #navbar ul {
   list-style-type: none;
+  margin: 0;
 }
-/* line 13, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 #navbar ul li {
   display: inline;
   float: left;
-  padding: 15px;
-  width: 23.33333%;
+  font-weight: 300;
 }
-/* line 19, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
 #navbar ul li a {
-  color: blueviolet;
+  color: #d0d1d3;
 }
-/* line 20, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 #navbar ul li a:hover {
-  color: green;
+  color: #FFF;
 }
-/* line 23, ../sass/style.scss */
-#navbar h1 {
-  margin-top: 0;
+/* line 44, ../sass/style.scss */
+#navbar ul li.active a {
+  color: #FFF;
+}
+
+/* line 49, ../sass/style.scss */
+#main-nav {
+  box-sizing: border-box;
+  height: 81px;
+  /* 	embedded styles */
+}
+/* line 54, ../sass/style.scss */
+#main-nav ul li {
+  border-right: 1px solid #808183;
+  padding: 30px 25px 26px 25px;
+}
+/* line 58, ../sass/style.scss */
+#main-nav ul li:first-child {
+  border-left: 1px solid #808183;
+}
+/* line 59, ../sass/style.scss */
+#main-nav ul li:hover {
+  background-color: #6d6e70;
+  border-right: 1px solid #d0d1d3;
+}
+/* line 65, ../sass/style.scss */
+#main-nav ul li.active {
+  background-color: #6d6e70;
+}
+
+/* line 72, ../sass/style.scss */
+#sub-nav {
+  background-color: #6d6e70;
+  height: 46px;
+}
+/* line 76, ../sass/style.scss */
+#sub-nav ul li {
+  border-right: 1px solid #808183;
+  padding: 12px 25px 8px 25px;
+}
+/* line 80, ../sass/style.scss */
+#sub-nav ul li:first-child {
+  border-left: 1px solid #808183;
+}
+/* line 81, ../sass/style.scss */
+#sub-nav ul li:hover {
+  background-color: #6d6e70;
+  border-right: 1px solid #d0d1d3;
+}
+/* line 87, ../sass/style.scss */
+#sub-nav ul li.active {
+  background-color: #929496;
+}
+
+/* line 93, ../sass/style.scss */
+#logo {
+  background-color: #a2a2a2;
+  padding: 20px 0 20px 32.5px;
 }

@@ -13,9 +13,32 @@
 </head>
 <body>
 <header id="navbar">
-	<div class="row">
-		<div class="large-16 columns">
-		
+	<div class="row collapse">
+		<div id="main-nav" class="large-16 columns">
+			<div id="logo" class="large-2 columns">
+				<img src="img/via.png">
+			</div>
+			<div class="large-10 columns">
+				<nav>
+					<ul>
+						<li class="active"><a>Home</a></li>
+						<li><a>Reporting History</a></li>
+						<li><a>Support</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div id="sub-nav">
+		<div class="row collapse">
+			<div class="large-16 columns">
+				<nav>
+					<ul>
+						<li class="active"><a>AAC</a></li>
+						<li><a>MPEG-4</a></li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	</div>
 </header>
