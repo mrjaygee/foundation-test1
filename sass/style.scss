@@ -2,34 +2,19 @@
 $link-color: blueviolet;
 $navbar-width: 100%;
 $items: 3;
-$navbar-color: #ce4dd6;
+$navbar-color-main: #59595B;
 
-$side: right;
-//$width: 2px;
-//$style: dotted;
-//$color: #CCC;
-
-@mixin border-sides($width: 2px, $style: dotted, $color:#CCC ) {
-  
-  border-#{$side}: #{$width} #{$style} #{$color};
-  
-}
-
-#navbar {
-	
-	background-color: $navbar-color;
-	box-sizing: border-box;
+#navbar {	
+	background-color: $navbar-color-main;
 	height: 50px;
 	width: $navbar-width;
 
 	ul { list-style-type: none; }
 		ul li { 
-				@include border-sides(2px, solid, green); 
 				display: inline; 
 				float: left;     
 				padding: 15px;
 				width: $navbar-width/$items - 10%; 
-				&:last-child {@include border-sides(0); }
 		}
 			ul li a { 	color: $link-color; 
 						&:hover { color: green; }
