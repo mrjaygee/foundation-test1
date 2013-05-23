@@ -1,17 +1,14 @@
 /* style.scss */
+@import "colors";
+//@import "foundation_icons_all/foundation_icons_general/sass/general_foundicons"
 
+/* VARIABLES  ============================== */
 $navbar-width: 100%;
 $horz: "right";
 
-/* COLORS ================================== */
+/* colors */
 
 $navbar-color-main: #59595B;
-$link-color: blueviolet;
-$gray-light-A2: #A2A2A2;
-$gray-light-D0: #D0D1D3;
-$gray-light-80: #808183;
-$gray-med-6D: #6D6E70;
-$gray-med-92: #929496;
 
 
 /* MIXINS ================================== */
@@ -19,6 +16,8 @@ $gray-med-92: #929496;
 	border-#{$horz}: 1px solid #{$border-color};
 }
 
+/* MAIN STYLES ============================= */
+/* topbar */
 #navbar {	
 	background-color: $navbar-color-main;
 	height: 127px;
@@ -44,14 +43,15 @@ $gray-med-92: #929496;
 	ul li.active a {
 		color: #FFF;
 	}
+	
 }
 
 #main-nav {
 	box-sizing: border-box;
 	height: 81px;
 
-	/* 	embedded styles */		
-	ul li {
+	/* nested elements */
+		ul li {
 		@include borders(right, $gray-light-80);
 		padding: 30px 25px 26px 25px;
 		
@@ -59,11 +59,15 @@ $gray-med-92: #929496;
 		&:hover { 
 			background-color: $gray-med-6D; 
 			@include borders(right, $gray-light-D0);
+			
+			a { color: #FFF; }
 		}
 	}
 	
 	ul li.active {
 		background-color: $gray-med-6D;
+		@include borders(right, $gray-light-D0);
+		a { color: #FFF; }
 	}
 	
  	
@@ -72,25 +76,98 @@ $gray-med-92: #929496;
 #sub-nav {
 	background-color: $gray-med-6D;
 	height:  46px;
-
+	
+	/* nested elements */
 	ul li {
 		@include borders(right, $gray-light-80);
-		padding: 12px 25px 8px 25px;
+		padding: 13px 25px 8px 25px;
+		position: relative;
 		
 		&:first-child { @include borders(left, $gray-light-80); }
 		&:hover { 
-			background-color: $gray-med-6D; 
+			background-color: $gray-med-92; 
 			@include borders(right, $gray-light-D0);
+			
+			a { color: #FFF; }
+			.arrow-down { display: block; }
 		}
 	}
 	
 	ul li.active {
 		background-color: $gray-med-92;
+		@include borders(right, $gray-light-D0);
+		.arrow-down { display: block; }
+		a { color: #FFF; }
 	}
 	
+}
+
+#utilities {
+	color: $gray-med-A6;
+	padding: 23px 0 0 0;
+	&:hover { cursor: pointer; }
+	
+	p {
+		font-size: 0.9em;
+	}
+	i { 
+		font-size: 1.5em; 
+		padding-top: 5px;
+		vertical-align: middle;
+	}
 }
 
 #logo {
 	background-color: $gray-light-A2;
 	padding: 20px 0 20px 32.5px;
+}
+
+.arrow-down {
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid $gray-med-92;
+	display: none;
+	height: 0; 
+	position: absolute;
+		top: 46px;
+		left: 40%;
+	width: 0;
+}
+
+/* content */
+#content {
+	background-image: url('../img/bg_px_lg.png');
+	background-position: 23% -3%;
+	background-repeat: no-repeat;
+	margin-top: 25px;
+}
+
+#content section {
+	margin-bottom: 30px;
+}
+
+#content i {
+	color: $gray-light-80;
+}
+#content i.large {
+	font-size: 2em;
+}
+
+.helper-text {
+	color: $gray-med-92;
+}
+
+.placard {
+	background-color: $gray-light-F1;
+	border-radius: 5px;
+	box-sizing: border-box;
+	float: left;
+	margin-right: 3%;
+	padding: 10px 15px 15px 15px;
+	width: 22%;
+	
+	h2, h5, small { color: $gray-light-80; text-align: center; }
+	h2 { line-height: 1.1em; }
+	h5 { text-align: left; }
+	button { width: 100%; }
 }
